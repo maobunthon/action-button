@@ -177,13 +177,6 @@ export default class ActionButton extends Component {
 
   _renderMainButton() {
     const wrapperStyle = {
-      backgroundColor: this.anim.interpolate({
-        inputRange: [0, 1],
-        outputRange: [
-          this.props.buttonColor,
-          this.props.btnOutRange || this.props.buttonColor
-        ]
-      }),
       width: this.props.size,
       height: this.props.size,
       borderRadius: this.props.size / 2
@@ -438,9 +431,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
   mainButton: {
-    width: 56,
-    height: 56,
-    margin: 0,
-    padding: 0
+    width: 58,
+    height: 58,
+    marginLeft: -3,
+    marginTop: -1
   }
 })

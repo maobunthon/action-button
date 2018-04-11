@@ -2,9 +2,9 @@ import {
   Platform,
   TouchableOpacity,
   TouchableNativeFeedback
-} from "react-native";
+} from 'react-native'
 
-export const DEFAULT_ACTIVE_OPACITY = 0.85;
+export const DEFAULT_ACTIVE_OPACITY = 0.85
 
 export const shadowStyle = {
   shadowOpacity: 0.35,
@@ -12,36 +12,36 @@ export const shadowStyle = {
     width: 0,
     height: 5
   },
-  shadowColor: "#000",
+  shadowColor: '#000',
   shadowRadius: 3,
   elevation: 5
-};
+}
 
 export const alignItemsMap = {
-  center: "center",
-  left: "flex-start",
-  right: "flex-end"
-};
+  center: 'center',
+  left: 'flex-start',
+  right: 'flex-end'
+}
 
-export const isAndroid = Platform.OS === "android";
+export const isAndroid = Platform.OS === 'android'
 
 export function getTouchableComponent(useNativeFeedback) {
   if (useNativeFeedback === true && isAndroid === true) {
-    return TouchableNativeFeedback;
+    return TouchableNativeFeedback
   }
-  return TouchableOpacity;
+  return TouchableOpacity
 }
 
 export function touchableBackground(color, fixRadius) {
   if (isAndroid) {
-    if (Platform["Version"] >= 21) {
+    if (Platform['Version'] >= 21) {
       return TouchableNativeFeedback.Ripple(
-        color || "rgba(255,255,255,0.75)",
+        color || 'rgba(255,255,255,0)',
         fixRadius
-      );
+      )
     } else {
-      TouchableNativeFeedback.SelectableBackground();
+      TouchableNativeFeedback.SelectableBackground()
     }
   }
-  return undefined;
+  return undefined
 }
